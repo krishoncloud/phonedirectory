@@ -1,0 +1,39 @@
+
+l = {"9811520624":["Krish","Pitampura"], "9811520824":["Amit","Subhash Nagar"]}
+while True:
+    print("""
+    1. To enter a phone no.
+    2.To Display an entry
+    3.Search 
+    4.Quit""")
+    ans = input("Enter response")
+    if ans == "1":
+        num = input("enter no.")
+        if len(num) == 10 and num[0] == "8" or num[0] == "9":
+            nme = input("enter name")
+            if nme != "":
+                addr = input("enter address")
+                if addr != "":
+                    l[num] = [nme.upper(),addr.upper()]
+                    print(l)
+                else:
+                    print("Address is required !")
+                    continue
+            else:
+                print("Name is required !")
+                continue
+        else:
+            print("enter phone no. with 10 digits and starting with 8 or 9")
+            continue
+    elif ans == "2":
+        wht = input("which no. ?")
+        print(l[wht])
+    elif ans == "3":
+        wht2 = input("what to search ?")
+        if wht2 in l:
+            print("yes, its there",l[wht2])
+        else:
+            print("sorry, not present")
+    elif ans == "4":
+        print("Thanks, have a great day !")
+        break
